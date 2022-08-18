@@ -10,7 +10,7 @@ This is a very simply Star Wars Wiki, I taked the idea from the **Mouredev Month
 - ✅ Add a search filter.
 - ✅ OPTIONAL: Detail of films, vehicles, planets...
 
-  give it a try: [play!](https://twentyeight07.github.io/Star-Wars-Wiki/)
+  live test: [Star Wars Wiki](https://twentyeight07.github.io/Star-Wars-Wiki/)
 
 if you want to contact me for any reason, this is my email: [eduardofreites1999@gmail.com](mailto:eduardofreites1999@gmail.com)
 
