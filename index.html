@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Wars Wiki</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <section class="container">
+      <div class="logo">
+        <a href="#home">Star Wars Wiki</a>
+      </div>
+      <nav class="menu">
+        <a href="#films">Films</a>
+        <a href="#characters">Characters</a>
+        <a href="#vehicles">Vehicles</a>
+        <a href="#planets">Planets</a>
+      </nav>
+    </section>
+  </header>
+
+  <section id="home" class="home">
+    <article class="hero-img" style="--hero-image: url(./assets/SWBD.png); --hero-attachment: fixed;">
+      <aside class="hero-img-opacity" style="--hero-opacity-color: var(--black-alpha-color)">
+        <div class="hero-img-content">
+          <h2 class="hero-img-title" style="--hero-text-color: var(--white-color)">
+            What is Star Wars?
+          </h2>
+          <p class="hero-img-text container" style="--hero-text-color: var(--white-color)">
+            <b>
+              Star Wars is an American epic space-opera multimedia franchise created by George Lucas, which began
+              with the
+              eponymous 1977 film and quickly became a worldwide pop-culture phenomenon. The franchise has been
+              expanded into
+              various films and other media, including television series, video games, novels, comic books, theme park
+              attractions,
+              and themed areas, comprising an all-encompassing fictional universe.
+            </b>
+          </p>
+        </div>
+      </aside>
+    </article>
+
+  </section>
+  <section id="films" class="films">
+    <br><br><br><br>
+    <h2 class="section-title">Films</h2>
+    <div>
+      <img src="assets/puff.svg" alt="loading" id="filmsLoader" class="loader">
+    </div>
+    <section id="filmsContainer" class="grid-fluid container"></section>
+  </section>
+
+  <section id="characters" class="people full-lg-screen">
+    <br><br><br><br>
+    <h2 class="section-title">Characters</h2>
+    <div class="search">
+      <input id="charactersSearch" class="input-search" type="search" placeholder="Search by name...">
+    </div>
+    <nav id="charactersNav" class="characters-nav nav-links"></nav>
+    <div>
+      <img src="assets/puff.svg" alt="loading" id="charactersLoader" class="loader">
+    </div>
+    <section id="peopleContainer" class="grid-fluid container"></section>
+  </section>
+
+  <section id="vehicles" class="vehicles full-lg-screen">
+    <br><br><br><br>
+    <h2 class="section-title">vehicles</h2>
+    <div class="search">
+      <input id="vehiclesSearch" class="input-search" type="search" placeholder="Search by name...">
+    </div>
+    <nav id="vehiclesNav" class="vehicles-nav nav-links"></nav>
+    <div>
+      <img src="assets/puff.svg" alt="loading" id="vehiclesLoader" class="loader">
+    </div>
+    <section id="vehiclesContainer" class="grid-fluid container"></section>
+  </section>
+
+  <section id="planets" class="planets full-lg-screen">
+    <br><br><br><br>
+    <h2 class="section-title">planets</h2>
+    <div class="search">
+      <input id="planetsSearch" class="input-search" type="search" placeholder="Search by name...">
+    </div>
+    <nav id="planetsNav" class="planets-nav nav-links"></nav>
+    <div>
+      <img src="assets/puff.svg" alt="loading" id="planetsLoader" class="loader">
+    </div>
+    <section id="planetsContainer" class="grid-fluid container"></section>
+  </section>
+
+  <template id="charactersTemplate">
+    <figure>
+      <figcaption class="figcaption">
+        <h3 class="card-title"></h3>
+        <div class="card-content">
+
+        </div>
+      </figcaption>
+    </figure>
+  </template>
+
+  <template id="filmsTemplate">
+    <figure>
+      <figcaption class="figcaption">
+        <h3 class="card-title"></h3>
+        <div class="card-content">
+
+        </div>
+        <div class="opening-crawl">
+
+        </div>
+      </figcaption>
+    </figure>
+  </template>
+
+  <template id="vehiclesTemplate">
+    <figure>
+      <img class="figure-img">
+      <figcaption class="figcaption">
+        <h3 class="card-title"></h3>
+        <div class="card-content">
+
+        </div>
+      </figcaption>
+    </figure>
+  </template>
+
+  <template id="planetsTemplate">
+    <figure>
+      <figcaption class="figcaption">
+        <h3 class="card-title"></h3>
+        <div class="card-content">
+
+        </div>
+      </figcaption>
+    </figure>
+  </template>
+
+  <footer class="footer">
+    <div>
+      <small>Site designed by <b>Eduardo Freites</b></small>
+    </div>
+    <div>
+      <a href="https://github.com/Twentyeight07" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" aria-label="GitHub" role="img" viewBox="0 0 512 512">
+          <rect width="512" height="512" rx="15%" fill="#1B1817" />
+          <path fill="#fff"
+            d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" />
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/efreites/" target="_blank" rel="noopener">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 504.4 504.4" style="enable-background:new 0 0 504.4 504.4;" xml:space="preserve">
+          <g>
+            <g>
+              <path d="M377.6,0.2H126.4C56.8,0.2,0,57,0,126.6v251.6c0,69.2,56.8,126,126.4,126H378c69.6,0,126.4-56.8,126.4-126.4V126.6
+      			C504,57,447.2,0.2,377.6,0.2z M168,408.2H96v-208h72V408.2z M131.6,168.2c-20.4,0-36.8-16.4-36.8-36.8c0-20.4,16.4-36.8,36.8-36.8
+      			c20.4,0,36.8,16.4,36.8,36.8C168,151.8,151.6,168.2,131.6,168.2z M408.4,408.2H408h-60V307.4c0-24.4-3.2-55.6-36.4-55.6
+      			c-34,0-39.6,26.4-39.6,54v102.4h-60v-208h56v28h1.6c8.8-16,29.2-28.4,61.2-28.4c66,0,77.6,38,77.6,94.4V408.2z" />
+            </g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+        </svg>
+      </a>
+      <a href="https://twitter.com/eduardojose03" target="_blank" rel="noopener">
+        <?xml version="1.0" encoding="iso-8859-1"?>
+        <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 504.4 504.4" style="enable-background:new 0 0 504.4 504.4;" xml:space="preserve">
+          <g>
+            <g>
+              <path
+                d="M377.6,0.2H126.4C56.8,0.2,0,57,0,126.6v251.6c0,69.2,56.8,126,126.4,126H378c69.6,0,126.4-56.8,126.4-126.4V126.6
+      			C504,57,447.2,0.2,377.6,0.2z M377.2,189c0,2.8,0,5.6,0,8.4c0,84-64.8,180.8-183.6,180.8c-36.4,0-70.4-10.4-98.8-28.4
+      			c5.2,0.4,10,0.8,15.2,0.8c30.4,0,58-10,80-27.2c-28.4-0.4-52-18.8-60.4-44c4,0.8,8,1.2,12,1.2c6,0,12-0.8,17.2-2.4
+      			c-28.8-6-50.8-31.6-50.8-62.4V215c8,4.8,18.4,7.6,28.8,8c-17.2-11.2-28.8-30.8-28.8-52.8c0-11.6,3.2-22.4,8.8-32
+      			c32,38.4,79.2,63.6,132.8,66.4c-1.2-4.8-1.6-9.6-1.6-14.4c0-35.2,28.8-63.6,64.4-63.6c18.4,0,35.2,7.6,47.2,20
+      			c14.8-2.8,28.4-8,40.8-15.6c-4.8,14.8-15.2,27.2-28.4,35.2c13.2-1.6,25.6-4.8,37.2-10C400.4,169,389.6,180.2,377.2,189z" />
+            </g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+          <g>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+
+
+  <script src="./script.js" type="module"></script>
+</body>
+
+</html>

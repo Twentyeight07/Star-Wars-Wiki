@@ -1,0 +1,330 @@
+/********Custom Properties*************/
+@font-face {
+  font-family: "star";
+  src: url("assets/StarJedi-DGRW.ttf");
+}
+
+@font-face {
+  font-family: "hollow";
+  src: url("assets/StarJediHollow-A4lL.ttf");
+}
+
+:root {
+  --first-color: #293d4f;
+  --first-alpha-color: rgba(41, 61, 79, 0.75);
+  --second-color: #4cc8ea;
+  --second-alpha-color: rgba(76, 200, 234, 0.75);
+  --third-color: #73e4c3;
+  --third-alpha-color: rgba(115, 228, 195, 0.5);
+  --white-color: #fff;
+  --gray-light-color: #f3f3f3;
+  --gray-color: #ccc;
+  --gray-dark-color: #666;
+  --black-color: #000;
+  --link-color: #509ee3;
+  --title-color: #333;
+  --text-color: #ef4125;
+  --white-alpha-color: rgba(255, 255, 255, 0.5);
+  --black-alpha-color: rgba(0, 0, 0, 0.5);
+  --font: "Aboreto", cursive;
+  --max-width: 1200px;
+  --header-height: 4rem;
+}
+
+/******************Reset*******************/
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: var(--font);
+  scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+
+  background: rgb(27, 40, 52);
+  background: linear-gradient(
+    0deg,
+    rgba(27, 40, 52, 1) 3%,
+    rgba(41, 61, 79, 1) 60%
+  );
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+/*****************Components****************/
+/***************Menu***************/
+
+.menu {
+  position: static;
+  left: 0;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--first-color);
+  transition: opacity 0.5s ease;
+}
+
+.menu a {
+  padding: 1.5rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease-out;
+}
+
+.menu a:hover {
+  color: var(--white-color);
+  background-color: transparent;
+  transition: all 0.3s ease-out;
+}
+/******************Hero Img*****************/
+.hero-img {
+  background-image: var(--hero-image);
+  background-color: var(--second-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: var(--hero-attachment);
+}
+
+.hero-img-opacity {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--hero-opacity-color);
+}
+
+.hero-img-title {
+  font-size: 7.5vw;
+  color: var(--hero-text-color);
+}
+
+.hero-img-text {
+  font-size: 2vw;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  color: var(--hero-text-color);
+  background: rgb(27, 40, 52);
+  background: linear-gradient(
+    180deg,
+    rgba(27, 40, 52, 0.9) 3%,
+    rgba(41, 61, 79, 0.9) 60%
+  );
+}
+
+/*****************Utilities****************/
+.btn {
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--max-width);
+}
+
+.figure-img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.full-lg-screen {
+  margin-top: 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.nav-links {
+  margin: 0rem auto;
+  text-align: center;
+  fill: var(--text-color);
+}
+
+.section {
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  border-top: thin solid var(--third-color);
+  border-bottom: thin solid var(--third-color);
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1rem;
+  width: 250px;
+  text-align: center;
+  background-color: var(--first-color);
+  color: var(--text-color);
+}
+
+/***********************Sites Styles***********************/
+.card-title {
+  border-top: thin solid var(--text-color);
+  border-bottom: thin solid var(--text-color);
+  border-radius: 0.5rem;
+}
+
+.figcaption {
+  /* background-color: var(--second-color); */
+  background-color: var(--second-alpha-color);
+  border-radius: 0.5rem;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  /* border: thin solid black; */
+  /* background-color: #232f34; */
+  border-radius: 0.5rem;
+}
+
+.footer {
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: var(--white-color);
+  background-color: #1b2834;
+}
+
+.footer svg {
+  width: 1.5rem;
+  height: auto;
+  margin: 0;
+  fill: var(--white-color);
+  transition: all 0.3s ease-out;
+}
+
+.footer svg:hover {
+  fill: #ef4125;
+  width: 2rem;
+  transition: all 0.3s ease-out;
+}
+
+.grid-fluid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  text-align: center;
+  background: rgb(27, 40, 52);
+  background: linear-gradient(
+    180deg,
+    rgba(27, 40, 52, 1) 3%,
+    rgba(41, 61, 79, 1) 60%
+  );
+  border-radius: 0.5rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 0.5rem;
+  width: 100%;
+  height: calc(var(--header-height) - 0.5rem);
+  background-color: var(--first-color);
+}
+
+.header > .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+hr {
+  margin: 0;
+  border: thin solid var(--third-color);
+}
+
+.loader {
+  width: 10%;
+  height: auto;
+  display: none;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  fill: #ef4125;
+}
+
+.loader.active {
+  display: block;
+  margin-top: 10rem;
+}
+
+.logo a {
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.search {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+  margin-right: 6rem;
+}
+
+.search > input {
+  width: 15rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+}
